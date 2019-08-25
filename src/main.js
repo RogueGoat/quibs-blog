@@ -6,6 +6,13 @@ import router from './router'
 import './assets/styles.css'
 //these are the tailwind base styles
 
+//simple function to add class after load
+document.addEventListener("DOMContentLoaded", function() {
+  document.getElementById('quibs-logo').classList.add('loaded')
+
+});
+
+//vue configuration
 Vue.config.productionTip = false
 
 new Vue({

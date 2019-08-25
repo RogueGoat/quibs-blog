@@ -1,5 +1,8 @@
 <template>
-  <div class="posts">
-    <h1>This is an about page</h1>
+  <div class="posts content">
+    <h1>The posts!</h1>
+    <ul>
+      <li>This will be the for-posts-in-posts</li>
+    </ul>
   </div>
 </template>
