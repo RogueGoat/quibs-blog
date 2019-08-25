@@ -2,3 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+/*Base styles*/
+body {
+    background: #ff6f61; /* Old browsers */
+    background: -moz-linear-gradient(top, #ff6f61 0%, #ff7f59 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #ff6f61 0%,#ff7f59 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #ff6f61 0%,#ff7f59 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff6f61', endColorstr='#ff7f59',GradientType=0 ); /* IE6-9 */
+
+    background-repeat: no-repeat;
+    height: 100vh;
+}
