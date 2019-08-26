@@ -3,115 +3,100 @@
 @tailwind utilities;
 
 /*Global styles*/
-* {
-    /*transition: background-color 300ms ease;*/
-}
-
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
+    position: relative;
     font-weight: 600;
     font-family: 'Slabo 27px', serif;
+    margin-bottom: 30px;
 }
 
 h1 {
     font-size: 40px;
 }
 
+h1::after,
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    /*background-color: #79e0c5;*/
+    background: linear-gradient(to right, #18edc9, #45ff86);
+    height: 2px;
+    width: 100%;
+}
+
 /*Tailwind styles*/
 .btn {
-    transition: all 300ms ease;
     position: relative;
-    z-index: 1;
+    padding: 10px 20px;
+    z-index: 2;
+    color: #2e3332;
+    transition: transform 300ms ease;
 }
-.btn::before:hover {
+
+.btn span {
+    color: #2e3332;
+}
+.btn:hover {
     transform: translate3d(-6px, -6px, 0);
-    background-color: #b5ffeb;
+}
+.btn:hover::after {
+    transform: translate3d(6px, 6px, 0);
 }
 
 .btn::before,
 .btn::after {
     content: '';
-    position: absolute;
     width: 100%;
     height: 100%;
-    left: 0;
-    bottom: 0;
-    z-index: 0;
-}
-
-.btn::before {
-    z-index: 1;
-    @apply font-bold py-2 px-4 rounded;
-    background-color: #79e0c5;
-}
-
-.btn::after {
-    z-index: 0;
-    background-color: #79e0c5;
-}
-
-/*Base element styles*/
-header {
     position: absolute;
-    height: 100px;
     top: 0;
     left: 0;
-    right: 0;
-    margin: auto;
-    z-index: 1;
-
-    /*content*/
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    /*padding: 0 20px;*/
+    border-radius: 2px;
+}
+.btn::before {
+    background: linear-gradient(to right, #18edc9, #45ff86);
+    z-index: -1;
+}
+.btn::after{
+    z-index: -2;
+    background-color: #00ab7f;
+    transition: all .3s ease;
 }
 
-header h1 {
+
+/*Base element styles - mobile*/
+header {
+    height: 100px;
+    margin: auto;
+}
+
+header .quibs-logo {
     color: #fff4ed;
     font-size: 60px;
     position: relative;
 }
 
-header h1::after {
+header .quibs-logo::after {
     content: '';
     position: absolute;
     bottom: 0;
     left: 10px;
     background-color: #79e0c5;
     height: 2px;
-    width: 0;
-    transition: width 300ms ease;
-}
-
-header h1.loaded::after {
     width: 50%;
 }
 
 body {
+    min-height: 100%;
     position: relative;
     padding: 50px 30px;
-    height: 100vh;
-}
-
-#app {
-    /*This is the App.vue #app*/
-
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-
-    /*Organizing content*/
-    padding-top: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 
     background: #ff6f61; /* Old browsers */
     background: -moz-linear-gradient(-45deg, #ff6f61 0%, #ff7f59 100%); /* FF3.6-15 */
@@ -119,6 +104,14 @@ body {
     background: linear-gradient(135deg, #ff6f61 0%,#ff7f59 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff6f61', endColorstr='#ff7f59',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
     background-repeat: no-repeat;
+}
+
+#app {
+    /*Organizing content*/
+    padding-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .wrapper {
@@ -129,22 +122,11 @@ body {
 
 }
 
-.flex-wrapper {
-    display: flex;
-    justify-content: space-between;
-}
-
 main,
 aside {
     background: #fff4ed;
     min-height: 300px;
-}
-
-.main-flex {
-    flex: 0 0 60%;
-}
-.aside-flex {
-    flex: 0 0 30%;
+    margin-bottom: 30px;
 }
 
 
@@ -169,4 +151,46 @@ aside {
 
 #nav a.router-link-exact-active {
     color: #79e0c5;
+}
+
+/*Desktop*/
+@media (min-width: 768px) {
+    /*Header/Body/Footer*/
+    header {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1;
+
+        /*content*/
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 30px;
+    }
+    body {
+        height: 100vh;
+    }
+    /*Flexy stuff*/
+    .flex-wrapper {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .main-flex {
+        flex: 0 0 60%;
+    }
+    .aside-flex {
+        flex: 0 0 30%;
+    }
+    /*App view stuff*/
+    #app {
+        /*This is the App.vue #app*/
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+    }
 }
