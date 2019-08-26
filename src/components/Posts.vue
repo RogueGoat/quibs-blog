@@ -1,22 +1,33 @@
 <template>
     <div class="container mx-auto">
         <main class="rounded-lg">
-            <article>
-                <h1>Title</h1>
-                Article
-            </article>
+            <ul class="blog-posts-all" v-if="posts && posts.length">
+                <li v-for="post of posts" v-bind:key="post.id">
+                    <p class="post-title">{{post.title}}</p>
+                    <p class="post-body">{{post.body}}</p>
+                    <p class="post-author">{{post.username}}</p>
+                    <a class="read-more" href="#">Read More</a>
+                </li>
+            </ul>
             <a class="btn" href="/blog">See All Posts</a>
         </main>
     </div>
 </template>
 
 <script>
+    import axios from 'axios'
+
     export default {
         name: 'Posts',
-        data: function(){
+        data () {
             return {
-
+                posts: []
             }
+        },
+        created() {
+            axios.get('http://jsonplaceholder.typicode.com/posts').then((response) => {
+                this.posts = response.data
+            })
         }
     }
 </script>

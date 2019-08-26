@@ -31,8 +31,14 @@ h2::after {
     width: 100%;
 }
 
+a {
+    color: #00ab7f;
+    text-decoration: underline;
+}
+
 /*Tailwind styles*/
 .btn {
+    text-decoration: none;
     position: relative;
     padding: 10px 20px;
     z-index: 2;
@@ -78,13 +84,18 @@ header {
     /*padding-top: 20px;*/
 }
 
-header .quibs-logo {
+.quibs-logo::after {
+    display: none;
+}
+
+.quibs-logo a {
     color: #fff4ed;
+    text-decoration: none;
     font-size: 60px;
     position: relative;
 }
 
-header .quibs-logo::after {
+.quibs-logo a::after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -92,6 +103,7 @@ header .quibs-logo::after {
     background-color: #79e0c5;
     height: 2px;
     width: 50%;
+    /*transition: width 300ms ease;*/
 }
 
 body {
@@ -138,8 +150,34 @@ aside {
 .newest {
     margin-bottom: 50px;
 }
+
 /*Posts styles*/
 
+.post-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #ff6f61;
+}
+
+.blog-posts-all {
+    padding: 20px;
+    text-align: left;
+}
+.read-more {
+
+}
+
+/*User styles*/
+.users-all {
+    padding: 20px;
+    text-align: left;
+}
+.users-all li {
+    margin-bottom: 30px;
+}
+.email {
+
+}
 /*Vue-specific styles*/
 #app {
     font-family: 'Assistant', sans-serif;
@@ -155,10 +193,12 @@ aside {
 #nav a {
     font-weight: 700;
     color: #2e3332;
+    text-decoration: none;
 }
 
 #nav a.router-link-exact-active {
     color: #79e0c5;
+    text-decoration: underline;
 }
 
 /*Desktop*/
@@ -178,8 +218,9 @@ aside {
         padding: 0 30px;
     }
     body {
-        height: 100vh;
+        min-height: 100vh;
     }
+
     /*Flexy stuff*/
     .flex-wrapper {
         display: flex;
@@ -195,10 +236,15 @@ aside {
     /*App view stuff*/
     #app {
         /*This is the App.vue #app*/
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
+    }
+
+    /*Users*/
+    .users-all {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+    .users-all li {
+        flex: 0 0 50%;
     }
 }
