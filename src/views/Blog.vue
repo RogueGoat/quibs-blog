@@ -1,6 +1,6 @@
 <template>
   <main class="posts content rounded-lg">
-    <h1>The posts!</h1>
+    <h1>All the Posts <small>Your daily dose of Lorem Ipsum!</small></h1>
     <Posts/>
   </main>
 </template>

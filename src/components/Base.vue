@@ -7,7 +7,7 @@
           Most Recent Post! Insert it here!
         </article>
       </section>
-      <a class="btn" href="/blog">See All</a>
+      <router-link class="see-all-posts" to="/blog">See All</router-link>
     </main>
     <aside class="rounded-lg aside-flex">
       <h2>User Spotlight</h2>

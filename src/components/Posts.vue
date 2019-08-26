@@ -9,7 +9,6 @@
                     <a class="read-more" href="#">Read More</a>
                 </li>
             </ul>
-            <a class="btn" href="/blog">See All Posts</a>
         </main>
     </div>
 </template>
