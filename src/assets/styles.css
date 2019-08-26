@@ -73,8 +73,9 @@ h2::after {
 
 /*Base element styles - mobile*/
 header {
-    height: 100px;
+    height: 120px;
     margin: auto;
+    /*padding-top: 20px;*/
 }
 
 header .quibs-logo {
@@ -129,7 +130,14 @@ aside {
     margin-bottom: 30px;
 }
 
+/*Home Styles*/
+.spotlight-comment {
+    /*font-size: 2em;*/
+}
 
+.newest {
+    margin-bottom: 50px;
+}
 /*Posts styles*/
 
 /*Vue-specific styles*/
@@ -145,7 +153,7 @@ aside {
 }
 
 #nav a {
-    font-weight: 300;
+    font-weight: 700;
     color: #2e3332;
 }
 

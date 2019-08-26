@@ -1,21 +1,20 @@
 <template>
     <div class="container mx-auto">
         <main class="rounded-lg">
-            <article>
-                <h1>Title</h1>
-                Article
-            </article>
-            <a class="btn" href="/blog">See All Posts</a>
+            <h1>Users</h1>
+            <ul>
+                <li>Users</li>
+            </ul>
         </main>
     </div>
 </template>
 
 <script>
     export default {
-        name: 'Posts',
+        name: 'Userlist',
         data: function(){
             return {
-
+                users: ''
             }
         }
     }
