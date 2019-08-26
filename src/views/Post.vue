@@ -17,11 +17,11 @@
             Posts
         },
         created() {
-            axios.get('http://jsonplaceholder.typicode.com/posts').then((response) => {
+            axios.get('https://jsonplaceholder.typicode.com/posts').then((response) => {
                 this.posts = response.data
             });
 
-            axios.get('http://jsonplaceholder.typicode.com/users').then((response) => {
+            axios.get('https://jsonplaceholder.typicode.com/users').then((response) => {
                 this.users = response.data
             });
         }

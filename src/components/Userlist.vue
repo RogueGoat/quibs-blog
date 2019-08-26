@@ -24,7 +24,7 @@
             }
         },
         created() {
-            axios.get('http://jsonplaceholder.typicode.com/users').then((response) => {
+            axios.get('https://jsonplaceholder.typicode.com/users').then((response) => {
                 this.users = response.data
             })
         }
