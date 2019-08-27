@@ -12,7 +12,7 @@
   <body>
   <header class="container">
     <h1 id="quibs-logo" class="quibs-logo"><a href="/">Quibs</a></h1>
-    <button href="/random" id="randomize" class="quibs-quip btn"><span>Learn something new!</span></button>
+    <button type="button" onclick="randomize()" id="randomize" class="quibs-quip btn"><span>Learn something new!</span></button>
   </header>
     <noscript>
       <strong>We're sorry but delta-defense doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
@@ -20,5 +20,14 @@
     <div id="app" class="app-view"></div>
     <!-- built files will be auto injected -->
 
+
+  <script>
+    //randomize
+    function randomize() {
+      //function to randomize the page the learn button goes to!
+      const random = Math.floor(Math.random() * 100);
+      window.open('/post/' + random);
+    }
+  </script>
   </body>
 </html>

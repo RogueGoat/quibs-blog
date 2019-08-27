@@ -23,6 +23,10 @@ h1 {
     font-size: 40px;
 }
 
+h2 {
+    font-size: 30px;
+}
+
 h1::after,
 h2::after {
     content: '';
@@ -201,6 +205,31 @@ aside {
 
 }
 
+/*Individual Post Page*/
+.post-content main {
+    text-align: left;
+}
+.post-content article {
+    margin-bottom: 40px;
+}
+.post-content h1,
+.post-content h2 {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.post-content article,
+.post-content .comments {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.comment-email,
+.user-email {
+    color: #00ab7f;
+}
+.comment-content {
+    margin-bottom: 30px;
+}
+
 /*User styles*/
 .users-all {
     padding: 20px;
@@ -211,6 +240,9 @@ aside {
 }
 .username a {
     font-weight: 600;
+}
+.user h1::after {
+    display: none;
 }
 /*Vue-specific styles*/
 #app {
@@ -259,6 +291,11 @@ aside {
     .flex-wrapper {
         display: flex;
         justify-content: space-between;
+        align-items: center;
+    }
+    .user.flex-wrapper {
+        align-items: center;
+        justify-content: center;
     }
 
     .main-flex {
@@ -284,6 +321,8 @@ aside {
     .users-all li {
         flex: 0 0 45%;
     }
+    /*Individual post stuff*/
+
 }
 
 @media (min-width: 1024px) {

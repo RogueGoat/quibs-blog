@@ -1,19 +1,19 @@
 <template>
-    <div class="container mx-auto">
-        <router-link to="/blog">Go Back</router-link>
-
+    <div class="container mx-auto post-content">
         <main class="rounded-lg">
-            <h3>{{post.title}}</h3>
-            <p>{{post.body}}</p>
-            <h4>Written by: <router-link :to="'/user/' + user.id">{{user.username}}</router-link></h4>
+            <h1>{{post.title}}</h1>
+            <article>
+                <p>{{post.body}}</p>
+                <strong>Written by: <router-link :to="'/user/' + post.userId">{{post.userId}} - {{user.username}}</router-link></strong>
+            </article>
 
-
-            <h3>The Peanut Gallery</h3>
+            <h2>The Peanut Gallery Says:</h2>
             <section class="comments">
-                <ul v-for="comment of comments" v-bind:key="comment.id">
-                    <li>{{comment.name}}</li>
+                <ul class="comment-content" v-for="comment of comments" v-bind:key="comment.id">
+                    <li>{{comment.postId}}</li>
+                    <li><strong>{{comment.name}}</strong></li>
                     <li>{{comment.body}}</li>
-                    <li>{{comment.email}}</li>
+                    <li class="comment-email">{{comment.email}}</li>
                 </ul>
             </section>
         </main>
@@ -37,6 +37,10 @@
             axios.get('https://jsonplaceholder.typicode.com/comments').then((response) => {
                 this.comments = response.data
             })
+            // axios.get(`https://jsonplaceholder.typicode.com/comments/${this.id}`)
+            //     .then(response => {
+            //         this.comments = response.data;
+            //     })
 
             axios.get(`https://jsonplaceholder.typicode.com/users/${this.id}`)
                 .then(response => {

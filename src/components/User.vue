@@ -1,9 +1,11 @@
 <template>
     <div class="container mx-auto">
-        <main class="rounded-lg user">
-            <p>Username: {{ user.username }}</p>
-            <p>Email: {{ user.email }}</p>
-            <p>User ID: {{ user.id }}</p>
+        <main class="rounded-lg user flex-wrapper">
+            <div>
+                <h1>Username: {{ user.username }}</h1>
+                <p class="user-email">Email: {{ user.email }}</p>
+                <p class="user-id">User ID: {{ user.id }}</p>
+            </div>
         </main>
     </div>
 </template>
@@ -19,16 +21,10 @@
                 user: []
             };
         },
-        // actions: {
-        //     async byId({ commit }, id) {
-        //         const { data: user } = await axios.get(`https://jsonplaceholder.typicode.com/users/${id}`);
-        //         commit('set', user);
-        //     },
-        // },
         created() {
             axios.get(`https://jsonplaceholder.typicode.com/users/${this.id}`)
-                .then(res => {
-                    this.user = res.data;
+                .then(response => {
+                    this.user = response.data;
                 })
         }
     }
