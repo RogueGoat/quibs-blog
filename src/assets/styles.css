@@ -166,10 +166,6 @@ aside {
     font-size: 20px;
 }
 
-.description h1 {
-
-}
-
 .see-all-posts {
     padding: 10px 20px;
     border-radius: 2px;
@@ -321,8 +317,6 @@ aside {
     .users-all li {
         flex: 0 0 45%;
     }
-    /*Individual post stuff*/
-
 }
 
 @media (min-width: 1024px) {

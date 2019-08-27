@@ -17,15 +17,18 @@
     import axios from 'axios'
     export default {
         name: 'Userlist',
+//Set user as a parameter in case I need it
         params: {
             users: []
         },
         data: function(){
             return {
+//User is the data model I need for this component
                 users: []
             }
         },
         created() {
+// Get the user information
             axios.get('https://jsonplaceholder.typicode.com/users').then((response) => {
                 this.users = response.data
             })
@@ -33,7 +36,3 @@
     }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-
-</style>

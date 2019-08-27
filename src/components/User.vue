@@ -22,6 +22,7 @@
             };
         },
         created() {
+//Get information for specific user
             axios.get(`https://jsonplaceholder.typicode.com/users/${this.id}`)
                 .then(response => {
                     this.user = response.data;

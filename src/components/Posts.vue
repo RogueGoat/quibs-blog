@@ -23,6 +23,7 @@
             }
         },
         created() {
+//Populate all the posts, no filter
             axios.get('https://jsonplaceholder.typicode.com/posts').then((response) => {
                 this.posts = response.data
             })
