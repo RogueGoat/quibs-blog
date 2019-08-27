@@ -1,31 +1,25 @@
 <template>
   <div class="container mx-auto flex-wrapper">
     <main class="rounded-lg main-flex">
-      <section class="newest">
+      <section class="description">
         <article>
           <h1>Hello There</h1>
-          Most Recent Post! Insert it here!
+          Welcome to the blog that features all the latest Lorum Ipsum gossip! Read more about it now!
         </article>
       </section>
       <router-link class="see-all-posts" to="/blog">See All</router-link>
     </main>
     <aside class="rounded-lg aside-flex">
       <h2>User Spotlight</h2>
-      <p class="spotlight-comment">{{ comment }}</p>
-      <p class="spotlight-user">{{ user }}</p>
+      <p class="spotlight-comment">"Ullam et saepe reiciendis voluptatem!"</p>
+      <p class="spotlight-user">Bret</p>
     </aside>
   </div>
 </template>
 
 <script>
-export default {
+  export default {
   name: 'Base',
-  data: function(){
-    return {
-      user: 'User',
-      comment: 'Comment'
-    }
-  }
 }
 </script>
 

@@ -148,19 +148,49 @@ aside {
 
 /*Home Styles*/
 .spotlight-comment {
-    /*font-size: 2em;*/
+    font-size: 20px;
+    font-style: italic;
+}
+.spotlight-user {
+    font-size: 18px;
+    font-weight: 700;
+    color: #00ab7f;
 }
 
-.newest {
+.description {
     margin-bottom: 50px;
+    font-size: 20px;
+}
+
+.description h1 {
+
+}
+
+.see-all-posts {
+    padding: 10px 20px;
+    border-radius: 2px;
+    background-color: #79e0c5;
+    color: #2e3332;
+    text-decoration: none;
+    transition: background-color 300ms ease;
+}
+
+.see-all-posts:hover {
+    background-color: #45ff86;
 }
 
 /*Posts styles*/
-
+.post {
+    border-bottom: 1px solid lightgray;
+    margin-bottom: 20px;
+}
 .post-title {
     font-size: 20px;
     font-weight: 700;
     color: #ff6f61;
+}
+.post-title span {
+    color: #2e3332;
 }
 
 .blog-posts-all {
@@ -179,8 +209,8 @@ aside {
 .users-all li {
     margin-bottom: 30px;
 }
-.email {
-
+.username a {
+    font-weight: 600;
 }
 /*Vue-specific styles*/
 #app {
@@ -247,16 +277,19 @@ aside {
     .users-all {
         display: flex;
         flex-wrap: wrap;
-        justify-content: flex-start;
+        justify-content: space-between;
     }
 
     .blog-posts-all li,
     .users-all li {
-        flex: 0 0 50%;
+        flex: 0 0 45%;
     }
 }
 
 @media (min-width: 1024px) {
+    .users-all {
+        justify-content: flex-start;
+    }
     .users-all li {
         flex: 0 0 33%;
     }

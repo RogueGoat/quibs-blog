@@ -2,11 +2,9 @@
     <div class="container mx-auto">
         <main class="rounded-lg">
             <ul class="blog-posts-all" v-if="posts && posts.length">
-                <li v-for="post of posts" v-bind:key="post.id">
-                    <p class="post-title">{{post.title}}</p>
-                    <p class="post-body">{{post.body}}</p>
-                    <p class="post-author">{{post.username}}</p>
-                    <a class="read-more" href="#">Read More</a>
+                <li class="post" v-for="post of posts" v-bind:key="post.id">
+                    <p class="post-title">{{post.id}} <span>{{post.title}}</span></p>
+                    <router-link class="read-more" :to="'/post/' + post.id">Read More</router-link>
                 </li>
             </ul>
         </main>
@@ -20,7 +18,8 @@
         name: 'Posts',
         data () {
             return {
-                posts: []
+                id: this.$route.params.id,
+                posts: [],
             }
         },
         created() {
